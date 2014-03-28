@@ -202,7 +202,6 @@ develop-eggs/
 .installed.cfg
 
 # Installer logs
-pip-log.txt
 
 # Unit test / coverage reports
 .coverage
@@ -213,4 +212,3 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-PAP_Log-28-03-14_20-17-46.txt
