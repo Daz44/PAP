@@ -30,8 +30,8 @@ Installation
 Example Usage
 --------------
 <b>Basic Speed Calculation</b>
-
 Input
+
 ```
 > calcspeed 0 3500 1000 0 3
 ```
@@ -44,6 +44,24 @@ Time: 3s                   | Speed: 10.500m/s                                   
 > Operation Completed in 1s
 ```
 
+Planned Implementations
+-----------------------
+```
+calc_speed   - Calculate speed, acceleration and distance based of of Force, Mass and Speed
+calc_acel    - Calculates acceleration based off of Force and Mass
+calc_weight  - Calculates weight based of Acceleration and Force
+calc_force   - Calculates force based off of Acceleration and Mass
+
+```
+Commands
+-----------------------
+```
+test                      - Test Speed Calculation.
+testlong                  - Long Test Calculation.
+calcs_speed                 - Calculates speed, distance and acceleration over time.
+convert-ms/km             - Converts m/s to km/h.
+convert-km/ms             - Converts km/h to m/s.
+```
 
 License
 ----
