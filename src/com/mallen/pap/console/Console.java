@@ -29,7 +29,7 @@ public class Console {
 			DateFormat df = new SimpleDateFormat("dd-MM-yy_HH-mm-ss");
 			Date currdate = new Date();
 
-			fos = new FileOutputStream("PAP_Log-" + df.format(currdate) + ".txt", true);
+			fos = new FileOutputStream(df.format(currdate) + ".paplog", true);
 			log = new PrintStream(fos);		
 			
 		} catch (FileNotFoundException e) {
