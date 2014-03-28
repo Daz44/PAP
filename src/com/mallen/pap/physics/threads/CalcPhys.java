@@ -23,7 +23,7 @@ public class CalcPhys {
 		Console.println("==== CALCULATING ACCELERATION FOR " + force + "n at " + mass + "kg, " + a + "====");
 		long dtime = System.currentTimeMillis();
 		
-		Console.print("Cofirm Operation... ");
+		Console.print("Cofirm Operation... (y/n) ");
 		Scanner s = new Scanner(System.in);
 		
 		String confirm = s.nextLine();

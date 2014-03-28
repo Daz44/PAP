@@ -48,6 +48,7 @@ public class Console {
 		Console.println("");
 		
 		Console.println("calcspeed @speed @force @mass @initialtime @finaltimee");
+		Console.println("test (Runs a test calcspeed)");
 		
 		
 		for(int i = 0; i < 100; i++){
