@@ -3,6 +3,7 @@ package com.mallen.pap.console;
 import java.util.Scanner;
 
 import com.mallen.pap.console.IO.commands;
+import com.mallen.pap.physics.CalcAcel;
 import com.mallen.pap.physics.CalcSpeed;
 import com.mallen.pap.physics.Convert;
 
@@ -15,28 +16,27 @@ public class Commands {
 		String[] inputarray = input.split(" ");	
 		commands parsecommand = commands.empty;
 		
-		IO.println("<IN> " + input);
+		IO.logln("<IN> " + input);
 		
 		if(inputarray[0].equals("exit")){
 			System.exit(0);
 		}
 		
 		if(inputarray[0].equals("test")){
-			CalcSpeed.setSpeed(0);
-			CalcSpeed.setMass(640);
-			CalcSpeed.setForce(5000);
-			CalcSpeed.setTime(0, 10);
-			CalcSpeed.printAcceleration();
+			CalcSpeed.set(0, 1000, 320, 0, 60);
+			CalcSpeed.printSpeed();
 		}
 
-		if(inputarray[0].equals("calcspeed")){
+		if(inputarray[0].equals("calc_speed")){
+				
+				CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]));
+				CalcSpeed.printSpeed();
 
-				CalcSpeed.setSpeed(Double.parseDouble(inputarray[1]));
-				CalcSpeed.setForce(Double.parseDouble(inputarray[2]));
-				CalcSpeed.setMass(Double.parseDouble(inputarray[3]));
-				CalcSpeed.setTime(Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]));
-				CalcSpeed.printAcceleration();
-
+		}
+		if(inputarray[0].equals("calc_acel")){
+				
+				CalcAcel.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
+				CalcAcel.printAcel();
 		}
 		
 		if(inputarray[0].equals("convert-ms/km")){

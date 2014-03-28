@@ -15,10 +15,11 @@ public class CalcSpeed {
 	public double calculateForce(double fnforce, double rnforce){
 		return fnforce-rnforce;
 	}
-	public static  void printAcceleration(){
+	public static  void printSpeed(){
 		
 		DecimalFormat df = new DecimalFormat("#.000");
 		double a = force/mass;
+		distance = 0;
 		
 		IO.println("==== CALCULATING ACCELERATION FOR " + force + "n at " + mass + "kg, " + a + "====");
 		long dtime = System.currentTimeMillis();
@@ -27,13 +28,14 @@ public class CalcSpeed {
 		Scanner s = new Scanner(System.in);
 		
 		String confirm = s.nextLine();
-		IO.println("<IN> " + confirm);
+		IO.logln("<IN> " + confirm);
 		
 		if(confirm.equals("y")){
-			for(int i = itime; i <= ftime; i++){		
+		for(int i = itime; i <= ftime; i++){		
 					
-				speed = a*i+ispeed; //Initial speed not working with 'distance'
-				distance += a*i;
+				speed = a*i+ispeed;
+				distance += speed;
+				
 				
 				IO.print("Time: " + (int)i + "s");	
 				for(int i2 = 0; i2 < 20-Integer.toString(i).length(); i2++){
@@ -45,8 +47,6 @@ public class CalcSpeed {
 					IO.print(" ");
 				}
 			
-			
-			//DISTANCE BROKEN ATM
 				IO.print("| Distance: " + df.format(distance) + "m");
 				for(int i2 = 0; i2 < 50-String.valueOf(df.format(distance)).length(); i2++){
 					IO.print(" ");
@@ -58,37 +58,13 @@ public class CalcSpeed {
 			IO.println("> Operation Aborted");
 		}
 	}
-	public static void setForce(double n){
-		force = n;
-	}
-	public static void setHeading(double n){
-		heading = n;
-	}
-	public static void setSpeed(double n){
-		ispeed = n;
-	}
-	public static void setMass(double n){
-		mass = n;
-	}
-	/**
-	 * 
-	 * Sets the time of the calcspeed equation,
-	 * eg. setTime(60, 120) would calculate between the one and two minute marks but not before or after.
-	 * 
-	 * 
-	 * @param i Value of the initial time 
-	 * @param f Value of the final time 
-	 */
-	public static void setTime(double i, double f){
-		itime = (int) i;
-		ftime = (int) f;
-	}
 	
-	public CalcSpeed(double speed, double force, double mass, double t1, double t2){
-		setSpeed(speed);
-		setForce(force);
-		setMass(mass);
-		setTime(t1, t2);
-		printAcceleration();
+	public static void set(double s, double f, double m, double t1, double t2){
+		distance = 0;
+		ispeed = s;
+		force = f;
+		mass = m;
+		itime = (int) t1;
+		ftime = (int) t2;
 	}
 }
