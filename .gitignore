@@ -212,3 +212,4 @@ develop-eggs/
 
 #Mr Developer
 .mr.developer.cfg
+*.paplog
