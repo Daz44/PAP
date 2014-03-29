@@ -34,7 +34,7 @@ public class CalcSpeed {
 		for(int i = itime; i <= ftime; i++){		
 					
 				speed = a*i+ispeed;
-				distance += speed;
+				distance = a*(i*i);
 				
 				
 				IO.print("Time: " + (int)i + "s");	

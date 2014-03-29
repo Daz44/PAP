@@ -29,9 +29,12 @@ public class Commands {
 
 		if(inputarray[0].equals("calc_speed")){
 				
-				CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]));
-				CalcSpeed.printSpeed();
-
+				if(inputarray.length == 4){
+					CalcSpeed.set(0, Double.parseDouble(inputarray[1]), 1, Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]));
+				} else {
+					CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]));
+				}
+					CalcSpeed.printSpeed();
 		}
 		if(inputarray[0].equals("calc_acel")){
 				
