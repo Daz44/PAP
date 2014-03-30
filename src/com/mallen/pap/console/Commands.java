@@ -9,14 +9,14 @@ import com.mallen.pap.physics.Convert;
 
 public class Commands {
 	public static void waitforin(){
-		Scanner in = new Scanner(System.in);
-		IO.print("> ");
+			Scanner in = new Scanner(System.in);
+			IO.print("> ");
 		
-		String input = in.nextLine();
-		String[] ia = input.split(" ");	
+			String input = in.nextLine();
+			String[] ia = input.split(" ");	
 		
-		IO.logln("<IN> " + input);
-		Commands.parse(ia);
+			IO.logln("<IN> " + input);
+			Commands.parse(ia);
 	}
 	public static void parse(String[] inputarray){
 		if(inputarray[0].equals("exit")){
@@ -37,25 +37,24 @@ public class Commands {
 		}
 
 		if(inputarray[0].equals("calc_speed")){
-				
-				if(inputarray.length == 4){
-					CalcSpeed.set(0, Double.parseDouble(inputarray[1]), 0, 1, Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]));
-				} else {
-					CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]), Double.parseDouble(inputarray[6]));
-				}
-					CalcSpeed.printSpeed();
-		}
-		if(inputarray[0].equals("calc_acel")){
-				
+			if(inputarray.length == 4){
+				CalcSpeed.set(0, Double.parseDouble(inputarray[1]), 0, 1, Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]));
+			} else {
+				CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]), Double.parseDouble(inputarray[6]));
+			}
+				CalcSpeed.printSpeed();
+			}
+		
+		if(inputarray[0].equals("calc_acel")){	
 				CalcAcel.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
 				CalcAcel.printAcel();
 		}
 		
 		if(inputarray[0].equals("convert-ms/km")){
-			IO.println("> " + Convert.mToKm(Double.valueOf(inputarray[1])));
+				IO.println("> " + Convert.mToKm(Double.valueOf(inputarray[1])));
 		}
 		if(inputarray[0].equals("convert-km/ms")){
-			IO.println("> " + Convert.kmToM(Double.valueOf(inputarray[1])));
+				IO.println("> " + Convert.kmToM(Double.valueOf(inputarray[1])));
 		}
 		
 		

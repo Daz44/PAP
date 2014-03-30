@@ -24,41 +24,32 @@ public class IO {
 
 	
 	public static void init(){
-		
 		try {
-	
 			DateFormat df = new SimpleDateFormat("dd-MM-yy_HH-mm-ss");
 			Date currdate = new Date();
 
 			fos = new FileOutputStream("log.paplog", true);
 			log = new PrintStream(fos);		
-		
-			IO.logln("\n\n\n" + df.format(currdate));
+			IO.logln("\n\n\n" + df.format(currdate)); // Sets space before begin logging, helps split diffrent execution of project in log.paplog
+			
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			IO.logln("[ERROR] " + e.getClass() + e.getCause() + e.getMessage() + e.getStackTrace()); // Wont happen, file WILL be created
 		}
-		
-		IO.println(" _____ _____ _____    ___     ___");
-		IO.println("|  _  |   __|  _  |  |_  |   |   |");
-		IO.println("|   __|   __|   __|   _| |_ _| | |");
-		IO.println("|__|  |__|  |__|     |_____|_|___|");
-		IO.println("(C) Matthew Allen 2014 - MIT LICENSE");
+			IO.println(" _____ _____ _____    ___     ___");
+			IO.println("|  _  |   __|  _  |  |_  |   |   |");
+			IO.println("|   __|   __|   __|   _| |_ _| | |");
+			IO.println("|__|  |__|  |__|     |_____|_|___|");
+			IO.println("(C) Matthew Allen 2014 - MIT LICENSE");
 		
 		for(int i = 0; i < 100; i++){
 			IO.print("-");
 		}
-		
-		for(int i = 0; i < 100; i++){
-			IO.print("-");
-		}
-		
-		IO.println("");
+		    IO.print("\n");
 	}
 	public static void print(String s){
 			log.print(s);
 			System.out.print(s);
 	}
-	
 	public static void println(String s){
 			
 			log.println(s);
@@ -68,6 +59,6 @@ public class IO {
 			log.println(s);
 	}
 	public static String nextIn(){
-		return in.nextLine();
+			return in.nextLine();
 	}
 }

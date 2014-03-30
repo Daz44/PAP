@@ -32,8 +32,7 @@ public class CalcSpeed {
 		IO.logln("<IN> " + confirm);
 		
 		if(confirm.equals("y")){
-		for(int i = itime; i <= ftime; i++){		
-
+			for(int i = itime; i <= ftime; i++){		
 				speed = a*i;
 				distance = 0.5d*(a*(i*i));
 				
@@ -52,21 +51,22 @@ public class CalcSpeed {
 				for(int i2 = 0; i2 < 50-String.valueOf(df.format(distance)).length(); i2++){
 					IO.print(" ");
 				}
-			IO.println("");
+				IO.println("");
 			}	
-			IO.println("> Operation Completed in " + (int)(System.currentTimeMillis() - dtime)/1000 + "s");
-		} else {
-			IO.println("> Operation Aborted");
+			
+				IO.println("> Operation Completed in " + (int)(System.currentTimeMillis() - dtime)/1000 + "s");
+			} else {
+				IO.println("> Operation Aborted"); // If reply is 'n'
 		}
 	}
 	
 	public static void set(double s, double f, double of,double m, double t1, double t2){
-		distance = 0;
-		ispeed = s;
-		force = f;
-		oforce = of;
-		mass = m;
-		itime = (int) t1;
-		ftime = (int) t2;
+			distance = 0;
+			ispeed = s;
+			force = f;
+			oforce = of;
+			mass = m;
+			itime = (int) t1;
+			ftime = (int) t2;
 	}
 }
