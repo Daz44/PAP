@@ -45,27 +45,13 @@ public class IO {
 		IO.println("(C) Matthew Allen 2014 - MIT LICENSE");
 		
 		for(int i = 0; i < 100; i++){
-			IO.print("*");
+			IO.print("-");
 		}
-		
-		IO.println("\n WARNING: In this build distance calculations are broken");
 		
 		for(int i = 0; i < 100; i++){
-			IO.print("*");
+			IO.print("-");
 		}
 		
-		IO.println("");
-		
-		IO.println("> calc_speed @speed @force @mass @initialtime @finaltimee or @acel @initialtime @finaltime");
-		IO.println("> calc_acel @force @mass");
-		IO.println("> convert-ms/km - Converts between m/s and km/h");
-		IO.println("> convert-km/ms - Converts between km/h and m/s");
-		IO.println("> test (Runs a test calcspeed)");
-		
-		
-		for(int i = 0; i < 100; i++){
-			IO.print("*");
-		}
 		IO.println("");
 	}
 	public static void print(String s){

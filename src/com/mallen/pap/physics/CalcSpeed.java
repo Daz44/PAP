@@ -7,7 +7,7 @@ import com.mallen.pap.console.IO;
 
 public class CalcSpeed {
 	
-	private static double force, heading, ispeed, mass;
+	private static double force, oforce,heading, ispeed, mass;
 	private static double speed, distance, a;
 	
 	private static int itime, ftime;
@@ -18,10 +18,11 @@ public class CalcSpeed {
 	public static  void printSpeed(){
 		
 		DecimalFormat df = new DecimalFormat("#.000");
-		double a = force/mass;
+		double calca = force/mass;
+		double a = calca;
 		distance = 0;
 		
-		IO.println("==== CALCULATING ACCELERATION FOR " + force + "n at " + mass + "kg, " + a + "====");
+		IO.println("> Speed Calculation for " + force + "n with " + oforce + " opposing force, at acel " + a + ", between " + itime + "s & " + ftime + "s");
 		long dtime = System.currentTimeMillis();
 		
 		IO.print("Cofirm Operation... (y/n) ");
@@ -32,9 +33,9 @@ public class CalcSpeed {
 		
 		if(confirm.equals("y")){
 		for(int i = itime; i <= ftime; i++){		
-					
-				speed = a*i+ispeed;
-				distance = a*(i*i);
+
+				speed = a*i;
+				distance = 0.5d*(a*(i*i));
 				
 				
 				IO.print("Time: " + (int)i + "s");	
@@ -59,10 +60,11 @@ public class CalcSpeed {
 		}
 	}
 	
-	public static void set(double s, double f, double m, double t1, double t2){
+	public static void set(double s, double f, double of,double m, double t1, double t2){
 		distance = 0;
 		ispeed = s;
 		force = f;
+		oforce = of;
 		mass = m;
 		itime = (int) t1;
 		ftime = (int) t2;
