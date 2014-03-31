@@ -23,7 +23,6 @@ public class CalcSpeed {
 		distance = 0;
 		
 		IO.println("> Speed Calculation for " + force + "n with " + oforce + " opposing force, at acel " + a + ", between " + itime + "s & " + ftime + "s");
-		long dtime = System.currentTimeMillis();
 		
 		IO.print("Cofirm Operation... (y/n) ");
 		Scanner s = new Scanner(System.in);
@@ -32,6 +31,9 @@ public class CalcSpeed {
 		IO.logln("<IN> " + confirm);
 		
 		if(confirm.equals("y")){
+			
+			long dtime = System.currentTimeMillis();
+			
 			for(int i = itime; i <= ftime; i++){		
 				speed = a*i;
 				distance = 0.5d*(a*(i*i));

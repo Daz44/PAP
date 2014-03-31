@@ -19,46 +19,43 @@ public class Commands {
 			Commands.parse(ia);
 	}
 	public static void parse(String[] inputarray){
-		if(inputarray[0].equals("exit")){
-			System.exit(0);
-		}
 		
-		if(inputarray[0].equals("commands")){
+		
+		switch(inputarray[0].toLowerCase()){
+		case "exit":
+			IO.logln("[EXIT] User called exit");
+			System.exit(0);
+		break;
+		case "commands":
 			IO.println("> calc_speed @speed @force @airrestistance (per m/s) @mass @initialtime @finaltimee or @acel @initialtime @finaltime");
 			IO.println("> calc_acel @force @mass");
 			IO.println("> convert-ms/km - Converts between m/s and km/h");
 			IO.println("> convert-km/ms - Converts between km/h and m/s");
 			IO.println("> test (Runs a test calcspeed)");		
+		break;
+		case "calc_speed":
+			CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]), Double.parseDouble(inputarray[6]));
+			CalcSpeed.printSpeed();	
+		break;
+		case "calc_acel":
+			CalcAcel.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
+			CalcAcel.printAcel();
+		break;
+		case "covert-mk":
+			IO.println("> " + Convert.mToKm(Double.valueOf(inputarray[1])));
+		break;
+		case "convert-km":
+			IO.println("> " + Convert.kmToM(Double.valueOf(inputarray[1])));
+		break;
+		default:
+			IO.println("> Invalid input");
+			
+			String[] cmd = new String[1];
+			cmd[0] = "commands";
+			parse(cmd);
+			waitforin();
+		break;
 		}
-		
-		if(inputarray[0].equals("test")){
-			CalcSpeed.set(0, 1000, 0 , 320, 0, 21600);
-			CalcSpeed.printSpeed();
-		}
-
-		if(inputarray[0].equals("calc_speed")){
-			if(inputarray.length == 4){
-				CalcSpeed.set(0, Double.parseDouble(inputarray[1]), 0, 1, Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]));
-			} else {
-				CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]), Double.parseDouble(inputarray[6]));
-			}
-				CalcSpeed.printSpeed();
-			}
-		
-		if(inputarray[0].equals("calc_acel")){	
-				CalcAcel.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
-				CalcAcel.printAcel();
-		}
-		
-		if(inputarray[0].equals("convert-ms/km")){
-				IO.println("> " + Convert.mToKm(Double.valueOf(inputarray[1])));
-		}
-		if(inputarray[0].equals("convert-km/ms")){
-				IO.println("> " + Convert.kmToM(Double.valueOf(inputarray[1])));
-		}
-		
-		
 		waitforin();
-		
 	}
 }
