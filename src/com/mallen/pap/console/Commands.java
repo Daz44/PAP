@@ -9,7 +9,7 @@ import com.mallen.pap.physics.CalcSpeed;
 import com.mallen.pap.physics.Convert;
 
 public class Commands {
-	public static void waitforin(){
+	public  void waitforin(){
 			Scanner in = new Scanner(System.in);
 			IO.print("> ");
 		
@@ -17,9 +17,9 @@ public class Commands {
 			String[] ia = input.split(" ");	
 		
 			IO.logln("<IN> " + input);
-			Commands.parse(ia);
+			this.parse(ia);
 	}
-	public static void parse(String[] inputarray){
+	public  void parse(String[] inputarray){
 		
 		
 		switch(inputarray[0].toLowerCase()){
@@ -39,12 +39,14 @@ public class Commands {
 			CalcSpeed.printSpeed();	
 		break;
 		case "calc_acel":
-			CalcAcel.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
-			CalcAcel.printAcel();
+			CalcAcel ca = new CalcAcel();
+			ca.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
+			ca.printAcel();
 		break;
 		case "calc_brake":
-			CalcBrake.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
-			CalcBrake.printBrake();
+			CalcBrake cb = new CalcBrake();
+			cb.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
+			cb.printBrake();
 		break;
 		case "covert-mk":
 			IO.println("> " + Convert.mToKm(Double.valueOf(inputarray[1])));

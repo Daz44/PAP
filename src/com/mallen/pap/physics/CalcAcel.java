@@ -1,11 +1,14 @@
 package com.mallen.pap.physics;
 
+import java.text.DecimalFormat;
+
 public class CalcAcel {
-	static double mass, force;
-	public static void printAcel(){
-		System.out.println("Acel: " + (force/mass) + "m/s/s");
+	 double mass, force;
+	public  void printAcel(){
+		DecimalFormat df = new DecimalFormat("#.000");
+		System.out.println("Acel: " + df.format((force/mass)) + "m/s/s");
 	}
-	public static void set(double f, double m){
+	public  void set(double f, double m){
 		mass = m;
 		force = f;
 	}

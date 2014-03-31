@@ -6,8 +6,8 @@ import java.util.Scanner;
 import com.mallen.pap.console.IO;
 
 public class CalcBrake {
-	private static double speed, brakerate, distance;
-	public static void printBrake(){
+	private  double speed, brakerate, distance;
+	public  void printBrake(){
 		DecimalFormat df = new DecimalFormat("#.000");
 		
 		IO.println("> Brake Calculation for " + speed + "m/s braking at " + brakerate + " m/s");
@@ -52,7 +52,7 @@ public class CalcBrake {
 				IO.println("> Operation Aborted"); // If reply is 'n'
 		}
 	}
-	public static void set(double s, double br){
+	public  void set(double s, double br){
 		speed = s;
 		brakerate = br;
 	}

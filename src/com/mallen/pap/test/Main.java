@@ -10,7 +10,11 @@ public class Main {
 	public static void main(String[] args){
 		
 		IO.init();
-		Commands.waitforin();
+		
+		
+		
+		Commands c = new Commands();
+		c.waitforin();
 	}
 }
  
