@@ -1,27 +1,30 @@
 package com.mallen.pap.console;
 
 import java.util.Scanner;
-
-import com.mallen.pap.console.IO.commands;
 import com.mallen.pap.physics.CalcAcel;
 import com.mallen.pap.physics.CalcBrake;
 import com.mallen.pap.physics.CalcSpeed;
 import com.mallen.pap.physics.Convert;
 
 public class Commands {
+	/**
+	 * Waiting for input from IO.nextIn();
+	 */
 	public  void waitforin(){
-			Scanner in = new Scanner(System.in);
 			IO.print("> ");
 		
-			String input = in.nextLine();
+			String input = IO.nextIn();
 			String[] ia = input.split(" ");	
 		
 			IO.logln("<IN> " + input);
 			this.parse(ia);
 	}
-	public  void parse(String[] inputarray){
-		
-		
+	/**
+	 * Parses user input for waitforin(), 
+	 * to determine the command to execute
+	 * @param inputarray - Array derived for waitforin();
+	 */
+	public  void parse(String[] inputarray){	
 		switch(inputarray[0].toLowerCase()){
 		case "exit":
 			IO.logln("[EXIT] User called exit");
@@ -31,8 +34,8 @@ public class Commands {
 			IO.println("> calc_speed @speed @force @airrestistance (per m/s) @mass @initialtime @finaltimee or @acel @initialtime @finaltime");
 			IO.println("> calc_acel @force @mass");
 			IO.println("> calc_brake @speed @brakerate");
-			IO.println("> convert-ms/km - Converts between m/s and km/h");
-			IO.println("> convert-km/ms - Converts between km/h and m/s");
+			IO.println("> convert-mk - Converts between m/s and km/h");
+			IO.println("> convert-km - Converts between km/h and m/s");
 		break;
 		case "calc_speed":
 			CalcSpeed.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]), Double.parseDouble(inputarray[3]), Double.parseDouble(inputarray[4]), Double.parseDouble(inputarray[5]), Double.parseDouble(inputarray[6]));

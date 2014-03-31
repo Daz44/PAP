@@ -35,6 +35,7 @@ public class CalcSpeed {
 			long dtime = System.currentTimeMillis();
 			
 			for(int i = itime; i <= ftime; i++){		
+				
 				speed = a*i;
 				distance = 0.5d*(a*(i*i));
 				

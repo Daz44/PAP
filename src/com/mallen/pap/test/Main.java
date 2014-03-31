@@ -8,11 +8,7 @@ import com.mallen.pap.physics.CalcSpeed;
 
 public class Main {
 	public static void main(String[] args){
-		
 		IO.init();
-		
-		
-		
 		Commands c = new Commands();
 		c.waitforin();
 	}
