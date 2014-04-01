@@ -11,21 +11,6 @@ Version
 
 DEV-BUILD
 
-Acknowledgements
------------
-JTP is developed using the following technolegy
-
-* [EclipseIDE] - A Java IDE.
-* [Java] - Java wrapper for Reddit
-
-Installation
---------------
-<b> DOWNLOAD SOURCE </b>
-```
-    > Download .ZIP or Clone from GitHub Respitory
-    > Import into your IDE
-```
-
 
 Example Usage
 --------------
