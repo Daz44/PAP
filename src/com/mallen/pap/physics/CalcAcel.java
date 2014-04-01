@@ -6,7 +6,8 @@ public class CalcAcel {
 	 double mass, force;
 	public  void printAcel(){
 		DecimalFormat df = new DecimalFormat("#.000");
-		System.out.println("Acel: " + df.format((force/mass)) + "m/s/s");
+		double a = force/mass;
+		System.out.println("> Acel: " + df.format((a)) + "m/s/s");
 	}
 	public  void set(double f, double m){
 		mass = m;

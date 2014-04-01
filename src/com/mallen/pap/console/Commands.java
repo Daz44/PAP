@@ -3,6 +3,7 @@ package com.mallen.pap.console;
 import java.util.Scanner;
 import com.mallen.pap.physics.CalcAcel;
 import com.mallen.pap.physics.CalcBrake;
+import com.mallen.pap.physics.CalcMass;
 import com.mallen.pap.physics.CalcSpeed;
 import com.mallen.pap.physics.Convert;
 
@@ -34,6 +35,7 @@ public class Commands {
 			IO.println("> calc_speed @speed @force @airrestistance (per m/s) @mass @initialtime @finaltimee or @acel @initialtime @finaltime");
 			IO.println("> calc_acel @force @mass");
 			IO.println("> calc_brake @speed @brakerate");
+			IO.println("> calc_mass @acel @force");
 			IO.println("> convert-mk - Converts between m/s and km/h");
 			IO.println("> convert-km - Converts between km/h and m/s");
 		break;
@@ -45,6 +47,11 @@ public class Commands {
 			CalcAcel ca = new CalcAcel();
 			ca.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
 			ca.printAcel();
+		break;
+		case "calc_mass":
+			CalcMass cm = new CalcMass();
+			cm.set(Double.parseDouble(inputarray[1]), Double.parseDouble(inputarray[2]));
+			cm.printMass();
 		break;
 		case "calc_brake":
 			CalcBrake cb = new CalcBrake();

@@ -62,7 +62,15 @@ public class CalcSpeed {
 				IO.println("> Operation Aborted"); // If reply is 'n'
 		}
 	}
-	
+	/**
+	 * 
+	 * @param s Initial speed of the object
+	 * @param f Constant force applied foward
+	 * @param of Constant force applied backward per m/s/s foward
+	 * @param m Mass of the object
+	 * @param t1 Initial Time
+	 * @param t2 Final Tiem
+	 */
 	public static void set(double s, double f, double of,double m, double t1, double t2){
 			distance = 0;
 			ispeed = s;
